@@ -7,8 +7,8 @@ describe('Saga tests', () => {
 
     it('Send data to form', () => {
             return expectSaga(rootSaga)
-                .put({type: TEXT_FROM_INPUTBOX, payload: 'SOMETHING' })
-                .dispatch({type: TEXT_TO_STORE, payload: 'something' })
+                .put({type: TEXT_TO_STORE, payload: 'basictext' })
+                .dispatch({type: TEXT_FROM_INPUTBOX})
                 .silentRun();
     }, 15000);
 });
