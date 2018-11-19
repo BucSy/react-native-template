@@ -19,18 +19,23 @@ const instructions = Platform.select({
 
 type Props = {
   app: IApp;
-  next: (text: string) => void;
-  _lang: (lang: string) => void;
-  textBasic: (text: string) => void;
+  next: (payload: string) => void;
+  _lang: (payload: string) => void;
+  textBasic: (payload: string) => void;
 };
 
 class App extends Component<Props> {
+  constructor(props: Props) {
+    super(props);
+    this.onButtonPress = this.onButtonPress.bind(this);
+    this.onTextInputChange = this.onTextInputChange.bind(this);
+  }
 
-  onButtonPress = () => {
+  onButtonPress() {
     this.props.textBasic(this.props.app.textFromInputBox);
   }
 
-  onTextInputChange = (text: any) => {
+  onTextInputChange(text: any) {
     this.props.next(text);
   }
 
