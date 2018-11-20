@@ -2,7 +2,7 @@ import I18n from 'react-native-i18n';
 import en from './en';
 import hu from './hu';
 
-I18n.fallbacks = hu;
+I18n.fallbacks = true;
 
 I18n.translations = {
   en,
