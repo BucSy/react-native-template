@@ -17,11 +17,14 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {
-  app: IApp;
+type IAppDispatch = {
   next: (payload: string) => void;
   _lang: (payload: string) => void;
   textBasic: (payload: string) => void;
+}
+
+type Props = IAppDispatch & {
+  app: IApp;
 };
 
 class App extends Component<Props> {
@@ -63,7 +66,7 @@ const mapStateToProps = (state: IStore, props: Props) => {
   }
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: any): IAppDispatch => {
   return bindActionCreators({
     next: actions.textInputBox,
     _lang: actions.changeLanguage,
