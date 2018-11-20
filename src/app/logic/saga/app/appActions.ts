@@ -6,6 +6,6 @@ export const CHANGE_LANGUAGE: string = 'CHANGE_LANGUAGE';
 
 export const actions = {
     textInputBox: (payload: string) => action(TEXT_TO_STORE, payload ),
-    textToBasictext: (payload: string) => action(TEXT_FROM_INPUTBOX, payload),
+    textToBasictext: () => action(TEXT_FROM_INPUTBOX),
     changeLanguage: (payload: string) => action(CHANGE_LANGUAGE, payload),
 }
